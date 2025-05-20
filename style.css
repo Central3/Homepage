@@ -1,0 +1,402 @@
+/* reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/* header */
+header {
+  padding: 32px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 39%, 0 92%);
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  max-width: 1264px;
+  background-color: #fff;
+}
+
+.about-content {
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+header .socials {
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.mdi:hover,
+.icon:hover {
+  cursor: pointer;
+}
+
+.about-heading {
+  margin-bottom: 24px;
+}
+
+.profile-picture {
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profile-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 5px 5px 5px #333;
+}
+
+/* main */
+main {
+  display: flex;
+  padding: 0 32px;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main-heading {
+  margin-bottom: 16px;
+}
+
+.my-work {
+  max-width: 1264px;
+  display: block;
+  flex: 1;
+}
+
+.projects-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-template-rows: repeat(2, 400px); */
+  grid-auto-rows: 400px;
+  min-height: 90%;
+  gap: 32px;
+}
+
+.project-card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-screenshot {
+  text-align: center;
+  padding: 32px;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-1 .project-screenshot {
+  background-color: #800020;
+  color: #fff;
+}
+
+.card-2 .project-screenshot {
+  background-color: #5d8aa8;
+  color: #fff;
+}
+
+.card-3 .project-screenshot {
+  background-color: #568203;
+  color: #fff;
+}
+
+.card-4 .project-screenshot {
+  background-color: #de3163;
+  color: #fff;
+}
+
+.card-5 .project-screenshot {
+  background-color: #ff4f00;
+  color: #fff;
+}
+
+.card-6 .project-screenshot {
+  background-color: #00b9e8;
+  color: #fff;
+}
+
+.project.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-info {
+  padding: 8px 16px;
+  flex: 1;
+}
+
+.project-info h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* footer styles */
+footer {
+  background-color: red;
+  margin-top: 32px;
+  color: #fff;
+  padding: 0 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  max-width: 1264px;
+  flex: 1;
+  padding: 32px 0;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer-info > * {
+  margin-bottom: 32px;
+}
+
+.footer-img {
+  max-width: 500px;
+}
+
+.contact-img {
+  width: 100%;
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  header .socials {
+    display: none;
+  }
+
+  .about {
+    display: block;
+    width: 85%;
+    padding: 7em 0;
+  }
+
+  .about-content {
+    padding: 64px 32px;
+  }
+
+  .about-heading {
+    text-align: center;
+  }
+
+  .profile-picture {
+    width: 50%;
+    float: left;
+    z-index: 2;
+    margin-right: 16px;
+  }
+
+  .profile-picture img {
+    transform: scale(1.1);
+    transform-origin: bottom right;
+  }
+
+  .profile-name {
+    background-color: transparent;
+    left: 100%;
+    top: 0;
+    transform: translate(-25px, -65px);
+  }
+}
+
+@media (max-width: 600px) {
+  /* header */
+  header .socials {
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .about {
+    display: block;
+  }
+
+  .about-content {
+    box-shadow: none;
+  }
+
+  .about-heading {
+    text-align: center;
+  }
+
+  .about::before {
+    content: "";
+    display: none;
+  }
+
+  .profile-picture {
+    padding: 32px;
+  }
+
+  .profile-picture::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    z-index: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 39%, 0 92%);
+  }
+
+  .profile-picture picture {
+    position: relative;
+  }
+
+  .profile-name {
+    text-align: left;
+    left: 50px;
+    bottom: 50px;
+    background-color: transparent;
+    width: 0;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  /* main */
+  main {
+    padding: 0;
+  }
+
+  .main-heading {
+    text-align: center;
+  }
+
+  .my-work {
+    padding: 16px;
+  }
+
+  /* footer */
+
+  .footer-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .footer-info {
+    padding: 16px;
+  }
+
+  .footer-heading {
+    text-align: center;
+  }
+
+  .contact-info span {
+    display: none;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  footer .socials {
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .footer-img {
+    max-width: 100%;
+  }
+}
